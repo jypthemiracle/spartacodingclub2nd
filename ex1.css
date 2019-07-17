@@ -1,0 +1,37 @@
+<style>
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1&display=swap');
+		h1{
+			color:blue;
+			font-family: 'Gothic A1', sans-serif;
+		}
+		p{
+			color:blue;
+		}
+		.ptag{
+			color: orange;
+		}
+		#h1{
+			color: red;
+		}
+		#btn1{
+			background-color:orange;
+		}
+		.jumbotron{
+			width:900px;
+			max-width:900px;
+			margin: auto;
+		}
+		.ex1{
+			margin:auto;
+			width:900px;
+		}
+		.ex2{
+			margin: auto;
+			width: 100%;
+		}
+		.card
+		{
+			float:left;
+			margin:10px;
+		}
+</style>
