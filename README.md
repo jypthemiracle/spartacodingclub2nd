@@ -1,3 +1,2 @@
 # spartacodingclub2nd
-Sparta Club 2nd
-I have started to learn web frontend starting from here :)
+스파르타코딩클럽 2기에서 학습한 자바스크립트/CSS/React 관련 코드를 올립니다.
