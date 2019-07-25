@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<head>
+	<title> 나홀로 링크 메모장 </title>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.js"
+  integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+  crossorigin="anonymous"></script>
+ 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+ 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div class="jumbotron">
+  	<h1 class="display-4">나홀로 링크 메모장</h1>
+  	<p class="lead">글을 읽고 난 뒤 들었던 내 생각들. 단상. 나는 무엇을 읽고, 무엇을 생각했는가?</p>
+  	<a class="btn btn-primary btn-lg" href="#" role="button">포스팅 박스 열기</a>
+  	</div>
+
+	<div class="form-post">
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">아티클 URL</label>
+          <input class="form-control" placeholder="">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">간단 코멘트</label>
+          <textarea class="form-control" rows="2"></textarea>
+        </div>
+        <button type="button" class="btn btn-primary">기사저장</button>
+      </form>
+    </div>
+
+    <div class = "ex2">
+    <div class="card-columns">
+      <div class="card" id="card1">
+        <img class="card-img-top" src="https://www.fodors.com/wp-content/uploads/2018/10/4_UltimateRome_PiazzaNavona-975x650.jpg">
+        <div class="card-body">
+          <h2 class="card-title">카드 제목</h2>
+          <p class="card-text">기사 내용</p>
+          <p class="card-comment">코멘트</p>
+        </div>
+      </div>
+      <div class="card" id="card2">
+        <img class="card-img" src="https://www.fodors.com/wp-content/uploads/2018/10/4_UltimateRome_PiazzaNavona-975x650.jpg">
+        <div class="card-body">
+          <h3 class="card-title">카드 제목</h3>
+          <p class="card-text">기사 내용</p>
+          <p class="card-comment">코멘트</p>
+        </div>
+      </div>
+      <div class="card" id="card3">
+        <img class="card-img" src="https://www.fodors.com/wp-content/uploads/2018/10/4_UltimateRome_PiazzaNavona-975x650.jpg">
+        <div class="card-body">
+          <h2 class="card-title">카드 제목</h2>
+          <p class="card-text">기사 내용</p>
+          <p class="card-comment">코멘트</p>
+        </div>
+      </div>
+<script>
+    $('.card').click(function () {
+        console.log('card');
+    });
+    console.log($('.card'));
+    console.log($('.card')[0]);
+
+    $('.card').eq(0).click(function (){
+        console.log('card1');
+    });
+    $('.card').eq(1).click(function (){
+        console.log('card2');
+    });
+    $('.card').eq(2).click(function (){
+        console.log('card3');
+    });
+</script>
+
+</body>
+</html>
