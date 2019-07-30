@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+   <table class="table" id="shoppingmall-card">
+               <thead>
+        <th>Name</th>
+        <th>Call Number</th>
+        <th>Address</th>
+        </thead>
+          </table>
+
+
+<script>
+function make_card(name,number,address){
+        let temp_html ='\
+        <tbody>\
+        <td>'+name+'</td>\
+        <td>'+number+'</td>\
+        <td>'+address+'</td>\
+        </tbody>';
+    $('#shoppingmall-card').append(temp_html);
+}
+    function get_posting() {
+    $.ajax({
+      type: "GET",
+      url: "/post",
+      data: {},
+      success: function(response){
+        let cards = response['articles'];
+        for (let i = 0 ; i<cards.length ; i++) {
+          let name2 = cards[i]['name'];
+          let number2 = cards[i]['number'];
+          let address2 = cards[i]['address']
+          make_card(name2,number2,address2);
+        }
+      }
+    })
+  }
+  window.onload=function(){
+    get_posting();
+}
+</script>
+</body>

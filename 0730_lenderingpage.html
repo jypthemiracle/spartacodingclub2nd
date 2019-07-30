@@ -1,0 +1,122 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Apple Store</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <style>
+      img{
+         display: block;
+         margin: 0 auto;
+      }
+      .first, .second{
+         display: inline-block;
+      }
+      .first{
+         margin-right: 10px;
+      }
+      .button{
+         margin: 30px 100px;
+      }
+      .total{
+         width:800px;
+         margin: 5 30%;
+         border-style: solid;
+         border-width: 10px;
+         border-color: black;
+      }
+      input{
+         margin: 5;
+         border-width: 5px;
+         border-color: blue;
+         border-radius: 5px;
+      }
+      .col-sm-10{
+         float:right;
+      }
+      .bu{
+         width : 500px;
+         margin : 5 20%;
+      }
+      .form-control1{
+         float:right;
+      }
+      .table{
+         width:500px;
+         margin:0 auto;
+         }
+      .btn btn-primary{
+         text-align: center;
+         margin:0 auto;
+      }
+</style>
+</head>
+</html>
+
+<body>
+     <div class="total"  ID="card">
+      <img src="https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-pro-12-11-select-201810_GEO_KR?wid=870&amp;hei=1100&amp;fmt=jpeg&amp;qlt=80&amp;op_usm=0.5,0.5&amp;.v=1540576022267" width ="300px" height="150px">
+      <section class="a">
+         <div class="first"><h2><strong>iPad Pro 10.5 inch</strong></h2></div>
+         <div class="second"><h5>가격 : 1,500,000원 / 개</h5></div>
+         <p>The iPad Pro 11-inch is excellent, and easily the best tablet Apple has ever made – but you'll need to know how to get the best out of it.</p>
+      </section>
+      <section class="b">
+         <h2><strong>Order iPad</strong></h2>
+
+
+<form class="form-horizontal" action="/action_page.php">
+<!-- action page -->
+   <div class="form-group">
+    <label class="name" >Orderer Name : </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ID="name" placeholder="Enter your name">
+    </div>
+ </div>
+  <div class="form-group">
+    <label class="address">Address : </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control"  ID="address" placeholder="Enter Address">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="number">Call Number : </label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" ID="number" placeholder="Enter Call Number">
+    </div>
+  </div>
+
+</form>
+
+<button onclick="posting()" type="button" class="btn btn-primary">Order iPad</button>
+
+</section>
+   </div>
+
+<script>
+  function posting() {
+    let name1 = $('#name').val();
+    let number1 = $('#number').val();
+    let address1 = $('#address').val();
+    $.ajax({
+      type: "POST", // POST 방식으로 요청하겠다.
+      url: "/post", // /post라는 url에 요청하겠다.
+      data: { name_give: name1, address_give: address1, number_give: number1}, // 데이터를 주는 방법
+      success: function(response){ // 성공하면
+        if (response['result'] == 'success') {
+          alert('포스팅 성공!');
+					window.location.reload();
+        } else {
+          alert('서버 오류!')
+        }
+      }
+    })
+  }
+</script>
+</body>
+</html>
